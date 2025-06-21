@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Marge",
+    "cuisine": "Georgian Fusion",
+    "address": "Tamar Mepe St. 5",
+    "rating": 4.8,
+    "description": "A modern twist on traditional Georgian dishes in a cozy, elegant atmosphere.",
+    "imageUrl": "/images/restaurants/marge.png"
+  },
+  {
+    "id": 2,
+    "name": "Extra Meat",
+    "cuisine": "Steakhouse",
+    "address": "Pushkini St. 12",
+    "rating": 4.9,
+    "description": "The best place in town for high-quality steaks and grilled meats.",
+    "imageUrl": "/images/restaurants/marge.png"
+  },
+  {
+    "id": 3,
+    "name": "Palaty",
+    "cuisine": "Georgian",
+    "address": "Pushkini St. 8",
+    "rating": 4.7,
+    "description": "Authentic Imeretian cuisine with live folk music in the evenings.",
+    "imageUrl": "/images/restaurants/marge.png"
+  },
+  {
+    "id": 4,
+    "name": "Baraqa",
+    "cuisine": "Georgian",
+    "address": "Rustaveli Ave. 1",
+    "rating": 4.5,
+    "description": "A popular spot known for its delicious Khachapuri and friendly service.",
+    "imageUrl": "/images/restaurants/marge.png"
+  },
+  {
+    "id": 5,
+    "name": "Satsnakheli Wine Gallery",
+    "cuisine": "Wine Bar",
+    "address": "Tsisperi Kantselebi St. 10",
+    "rating": 4.9,
+    "description": "An exquisite selection of Georgian wines paired with light snacks and cheese boards.",
+    "imageUrl": "/images/restaurants/marge.png"
+  },
+  {
+    "id": 6,
+    "name": "El Depo",
+    "cuisine": "European",
+    "address": "Newport St. 3",
+    "rating": 4.4,
+    "description": "Casual dining with a diverse menu, perfect for a quick and tasty meal.",
+    "imageUrl": "/images/restaurants/marge.png"
+  },
+  {
+    "id": 7,
+    "name": "Toma's Wine Cellar",
+    "cuisine": "Georgian Family-style",
+    "address": "Sergo Kldiashvili St. 22",
+    "rating": 5.0,
+    "description": "A hidden gem offering a truly authentic homemade Georgian dining experience.",
+    "imageUrl": "/images/restaurants/marge.png"
+  },
+  {
+    "id": 8,
+    "name": "Our Garden",
+    "cuisine": "Georgian/European",
+    "address": "Varlamishvili St. 18",
+    "rating": 4.6,
+    "description": "A beautiful restaurant with a lovely garden setting, great for families.",
+    "imageUrl": "/images/restaurants/marge.png"
+  },
+  {
+    "id": 9,
+    "name": "Lilestan",
+    "cuisine": "Georgian",
+    "address": "St. Nino St. 11",
+    "rating": 4.7,
+    "description": "Famous for its delicious Lobiani and traditional Imeretian dishes.",
+    "imageUrl": "/images/restaurants/marge.png"
+  },
+  {
+    "id": 10,
+    "name": "Bikentia's Kebabery",
+    "cuisine": "Kebab",
+    "address": "Tamar Mepe St. 33",
+    "rating": 4.8,
+    "description": "A legendary local spot serving up simple but incredibly flavorful kebabs.",
+    "imageUrl": "/images/restaurants/marge.png"
+  }
+]
