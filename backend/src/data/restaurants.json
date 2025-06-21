@@ -15,7 +15,7 @@
     "address": "Pushkini St. 12",
     "rating": 4.9,
     "description": "The best place in town for high-quality steaks and grilled meats.",
-    "imageUrl": "/images/restaurants/marge.png"
+    "imageUrl": "/images/restaurants/extrameat.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "address": "Pushkini St. 8",
     "rating": 4.7,
     "description": "Authentic Imeretian cuisine with live folk music in the evenings.",
-    "imageUrl": "/images/restaurants/marge.png"
+    "imageUrl": "/images/restaurants/palaty.jpg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "address": "Rustaveli Ave. 1",
     "rating": 4.5,
     "description": "A popular spot known for its delicious Khachapuri and friendly service.",
-    "imageUrl": "/images/restaurants/marge.png"
+    "imageUrl": "/images/restaurants/baraqa.jpg"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "address": "Tsisperi Kantselebi St. 10",
     "rating": 4.9,
     "description": "An exquisite selection of Georgian wines paired with light snacks and cheese boards.",
-    "imageUrl": "/images/restaurants/marge.png"
+    "imageUrl": "/images/restaurants/wine.jpg"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "address": "Newport St. 3",
     "rating": 4.4,
     "description": "Casual dining with a diverse menu, perfect for a quick and tasty meal.",
-    "imageUrl": "/images/restaurants/marge.png"
+    "imageUrl": "/images/restaurants/eldepo.jpg"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "address": "Sergo Kldiashvili St. 22",
     "rating": 5.0,
     "description": "A hidden gem offering a truly authentic homemade Georgian dining experience.",
-    "imageUrl": "/images/restaurants/marge.png"
+    "imageUrl": "/images/restaurants/toma.jpg"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "address": "Varlamishvili St. 18",
     "rating": 4.6,
     "description": "A beautiful restaurant with a lovely garden setting, great for families.",
-    "imageUrl": "/images/restaurants/marge.png"
+    "imageUrl": "/images/restaurants/garden.jpg"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "address": "St. Nino St. 11",
     "rating": 4.7,
     "description": "Famous for its delicious Lobiani and traditional Imeretian dishes.",
-    "imageUrl": "/images/restaurants/marge.png"
+    "imageUrl": "/images/restaurants/lilestan.jpg"
   },
   {
     "id": 10,
@@ -87,6 +87,6 @@
     "address": "Tamar Mepe St. 33",
     "rating": 4.8,
     "description": "A legendary local spot serving up simple but incredibly flavorful kebabs.",
-    "imageUrl": "/images/restaurants/marge.png"
+    "imageUrl": "/images/restaurants/bikentia.jpg"
   }
 ]

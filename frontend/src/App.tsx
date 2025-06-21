@@ -2,21 +2,19 @@ import { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 import type { Restaurant } from './types';
 import RestaurantCard from './components/RestaurantCard';
+import RestaurantDetail from './components/RestaurantDetail';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 
-// The URL for our backend API.
 const API_URL = 'http://localhost:5000/api/restaurants';
 
 function App() {
-  // State for the full list of restaurants from the API
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
-  // State for the user's search query
   const [searchTerm, setSearchTerm] = useState('');
-  // State for loading and error handling
+  const [sortOption, setSortOption] = useState('');             // ← new
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // useEffect to fetch data when the component mounts
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
@@ -24,58 +22,87 @@ function App() {
         const response = await axios.get<Restaurant[]>(API_URL);
         setRestaurants(response.data);
         setError(null);
-      } catch (err) {
-        console.error('Failed to fetch restaurants:', err);
+      } catch {
         setError('Failed to load data. Please make sure the backend server is running.');
       } finally {
         setLoading(false);
       }
     };
-
     fetchRestaurants();
-  }, []); // The empty array [] means this effect runs only once
+  }, []);
 
-  // useMemo to efficiently filter restaurants whenever the search term or list changes
   const filteredRestaurants = useMemo(() => {
-    if (!searchTerm) {
-      return restaurants;
+    let data = restaurants;
+
+    // 1️⃣ filter by search
+    if (searchTerm) {
+      data = data.filter(r =>
+        r.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        r.cuisine.toLowerCase().includes(searchTerm.toLowerCase())
+      );
     }
-    return restaurants.filter(restaurant =>
-      restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      restaurant.cuisine.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  }, [restaurants, searchTerm]);
+
+    // 2️⃣ sort by rating
+    if (sortOption === 'high-to-low') {
+      data = [...data].sort((a, b) => b.rating - a.rating);
+    } else if (sortOption === 'low-to-high') {
+      data = [...data].sort((a, b) => a.rating - b.rating);
+    }
+
+    return data;
+  }, [restaurants, searchTerm, sortOption]);
 
   return (
-    <div className="app">
-      <header className="app-header">
-        <h1>Kutaisi Restaurant Lister</h1>
-        <input
-          type="text"
-          placeholder="Search by name or cuisine..."
-          className="search-bar"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </header>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <div className="app">
+            <header className="app-header">
+              <h1>Kutaisi Restaurant Lister</h1>
 
-      <main className="app-main">
-        {loading && <p>Loading restaurants...</p>}
-        {error && <p className="error-message">{error}</p>}
-        
-        {!loading && !error && (
-          <div className="restaurant-grid">
-            {filteredRestaurants.map(restaurant => (
-              <RestaurantCard key={restaurant.id} restaurant={restaurant} />
-            ))}
+              <div className="controls">
+                <input
+                  type="text"
+                  placeholder="Search by name or cuisine..."
+                  className="search-bar"
+                  value={searchTerm}
+                  onChange={e => setSearchTerm(e.target.value)}
+                />
+
+                <select
+                  className="sort-dropdown"
+                  value={sortOption}
+                  onChange={e => setSortOption(e.target.value)}
+                >
+                  <option value="">Sort by rating</option>
+                  <option value="high-to-low">Rating: High → Low</option>
+                  <option value="low-to-high">Rating: Low → High</option>
+                </select>
+              </div>
+            </header>
+
+            <main className="app-main">
+              {loading && <p>Loading restaurants...</p>}
+              {error && <p className="error-message">{error}</p>}
+
+              {!loading && !error && (
+                <div className="restaurant-grid">
+                  {filteredRestaurants.map(r => (
+                    <RestaurantCard key={r.id} restaurant={r} />
+                  ))}
+                </div>
+              )}
+
+              {!loading && filteredRestaurants.length === 0 && searchTerm && (
+                <p>No restaurants found matching your search.</p>
+              )}
+            </main>
           </div>
-        )}
-
-        {!loading && filteredRestaurants.length === 0 && searchTerm && (
-          <p>No restaurants found matching your search.</p>
-        )}
-      </main>
-    </div>
+        }
+      />
+      <Route path="/restaurant/:id" element={<RestaurantDetail />} />
+    </Routes>
   );
 }
 

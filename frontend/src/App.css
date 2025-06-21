@@ -1,3 +1,5 @@
+/* frontend/src/App.css */
+
 .app {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f7f6;
@@ -17,15 +19,34 @@
   font-size: 2.5rem;
 }
 
-.search-bar {
+/* Wrapper to hold search and sort controls side by side */
+.controls {
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Shared styles for search input and sort dropdown */
+.search-bar,
+.sort-dropdown {
   padding: 0.75rem;
-  width: 50%;
-  max-width: 500px;
   font-size: 1rem;
   border-radius: 25px;
   border: 1px solid #ccc;
   outline: none;
+}
+
+/* Specific width rules */
+.search-bar {
+  width: 50%;
+  max-width: 500px;
+}
+
+.sort-dropdown {
+  width: 200px;
+  max-width: 300px;
 }
 
 .app-main {
