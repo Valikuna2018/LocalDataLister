@@ -95,7 +95,9 @@ function App() {
               )}
 
               {!loading && filteredRestaurants.length === 0 && searchTerm && (
-                <p>No restaurants found matching your search.</p>
+                <div className="no-results-message">
+                  <p>No restaurants found matching your search.</p>
+                </div>
               )}
             </main>
           </div>
