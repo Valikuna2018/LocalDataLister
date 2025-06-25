@@ -1,15 +1,19 @@
+/* --- RestaurantCard.css --- */
+
+/* Main card container */
 .card {
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .card-img {
@@ -19,41 +23,73 @@
 }
 
 .card-content {
-  padding: 1rem;
+  padding: 1rem 1.25rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
 .card-title {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
   font-size: 1.5rem;
-  color: #333;
+  color: #2c3e50;
+  font-weight: 600;
 }
 
+/* This is the container for the badges and rating */
 .card-details {
   display: flex;
   justify-content: space-between;
-  color: #666;
-  font-size: 0.9rem;
+  align-items: center;
   margin-bottom: 1rem;
+  gap: 1rem;
 }
 
-.card-details span:first-child {
-  background-color: #f0f0f0;
-  padding: 0.2rem 0.5rem;
-  border-radius: 12px;
+/* 
+  ✅ THE FIX IS HERE: We use a specific class for the cuisine badge.
+  This style will ONLY apply to elements with the class "cuisine-badge".
+*/
+.cuisine-badge {
+  background-color: #f1f3f5; /* A slightly softer gray */
+  color: #495057;
+  padding: 0.3rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Container for the stars and the number to keep them together */
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* We add a background and padding here for a better look */
+  background-color: #f8f9fa;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  border: 1px solid #e9ecef;
+}
+
+/* Style for the numeric text next to the stars */
+.rating-text {
+  font-size: 0.9rem;
+  color: #343a40;
+  font-weight: 600;
+  line-height: 1; /* Helps with vertical alignment */
 }
 
 .card-description {
   flex-grow: 1;
-  color: #555;
-  line-height: 1.4;
+  color: #495057;
+  line-height: 1.5;
   margin-bottom: 1rem;
+  font-size: 0.95rem;
 }
 
 .card-address {
   font-style: italic;
-  color: #888;
-  font-size: 0.8rem;
+  color: #868e96;
+  font-size: 0.85rem;
+  margin-top: auto; /* Pushes the address to the bottom */
 }
