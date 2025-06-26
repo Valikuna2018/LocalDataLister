@@ -1,0 +1,37 @@
+.star-rating {
+  display: inline-flex; /* Aligns stars in a row */
+  font-size: 1.5rem;   /* Makes the stars a nice, visible size */
+}
+
+/* Base style for all star characters */
+.star {
+  /* Using a variable for the empty color makes it easy to theme */
+  --empty-color: #e0e0e0; 
+  color: var(--empty-color);
+  position: relative;
+  cursor: default;
+}
+
+/* Styles for a fully filled star */
+.star.full {
+  /* Using a variable for the filled color */
+  --filled-color: #ffc107; /* A beautiful gold color */
+  color: var(--filled-color);
+}
+
+/* The magic for the half-filled star */
+.star.half {
+  --filled-color: #ffc107;
+  position: relative;
+  display: inline-block;
+  
+  /* Create the half-filled effect using a gradient background */
+  background: linear-gradient(90deg, var(--filled-color) 50%, var(--empty-color) 50%);
+  
+  /* This is the key: it clips the background to the shape of the text! */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Make the text itself transparent so the background shows through */
+  color: transparent;
+}
